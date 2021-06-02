@@ -1,0 +1,246 @@
+html {
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --white: rgb(239, 239, 239);
+    --gray: rgb(54, 54, 54);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd hd hd hd hd"
+    "hr hr hr hr hr hr hr hr hr hr hr hr"
+    "cn cn cn cn cn cn cn cn cn cn cn cn"
+    "ft ft ft ft ft ft ft ft ft ft ft ft";
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 15rem 25rem auto 15rem;
+
+    background-image: url(../images/skating\ background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position-y: -5rem;
+}
+
+header, section {
+    z-index: 3;
+}
+
+header {
+    grid-area: hd;
+    display: grid;
+    grid-template-areas: 
+    "logo"
+    "nav";
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    background-color: var(--white);
+}
+
+header .logo {
+    grid-area: logo;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    height: 8rem;
+}
+
+header nav {
+    grid-area: nav;
+    display: inline-flex;
+    height: 5rem;
+    width: 100%;
+    background-color: var(--gray);
+    align-items: center;
+    justify-content: center;
+}
+
+header ul {
+    display: inline-flex;
+    width: 50rem;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.5rem;
+    height: 2.5rem;
+    color: var(--white);
+    text-decoration: none;
+}
+header a:hover {
+    background-color: var(--white);
+    color: black;
+}
+
+.active {
+    background-color: rgb(32, 32, 32);
+    color: rgb(179, 179, 179);
+}
+
+.hero {
+    grid-area: hr;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(122, 122, 122, 0.5));
+    display: flex;
+    align-items: center;
+}
+
+.join {
+    background-color: var(--white);
+    border-radius: 0.3rem;
+    width: 30%;
+    height: 60%;
+    text-align: center;
+    position: relative;
+    left: 5rem;
+    padding: 2.5rem;
+}
+
+.join h1 {
+    font-size: 2.4rem;
+    margin: 0.4rem 0;
+    text-transform: uppercase;
+}
+
+.join p {
+    font-size: 1.2rem;
+}
+
+.join button {
+    width: 70%;
+    height: 3rem;
+    margin-top: 1rem;
+    color: white;
+    font-size: 1rem;
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.content {
+    grid-area: cn;
+    padding: 2rem 8rem;
+    background-color: rgb(54, 54, 54);
+    color: var(--white);
+}
+
+footer {
+    grid-area: ft;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
+    padding: 2rem 8rem;
+}
+
+footer nav {
+    display: inline-flex;
+    height: 100%;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+footer nav a {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--gray)
+}
+
+footer h1 {
+    margin: 0.5rem 0;
+}
+
+footer .container {
+    display: grid;
+    grid-template-rows: auto 2rem;
+    width: 22rem;
+    height: 100%;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fb, .insta, .twitter  {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.fb {
+    background-image: url(../images/facebook.png);
+}
+
+.insta {
+    background-image: url(../images/instagram-small.png);
+}
+
+.twitter {
+    background-image: url(../images/twitter.png);
+}
+
+.copyright {
+    align-self: end;
+    text-align: right;
+}
+
+@media only screen and (max-width: 1270px) {
+    .hero .join {
+        width: 28rem;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    html {
+        font-size: 20px;
+    }
+    body {
+        grid-template-rows: 15rem 25rem auto 20rem;
+    }
+    footer {
+        flex-flow: column;
+    }
+    footer nav h1 { 
+        width: 100%;
+        text-align: center;
+    }
+    footer nav {
+        width: 100%;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    footer nav a {
+        margin-right: 2rem;
+    }
+    footer .container {
+        width: 100%;
+    }
+    footer .socials {
+        justify-content: center;
+    }
+    .fb, .twitter, .insta {
+        margin: 0 0.75rem;
+    }
+    footer .copyright {
+        text-align: center;
+    }
+}
